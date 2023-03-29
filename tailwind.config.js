@@ -2,6 +2,18 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    colors: {
+      green: '#495E57',
+      yellow: '#F4CE14',
+      salmon: '#EE9972',
+      beige: '#FBDABB',
+      lightgray: '#EDEFEE',
+      black: '#333333'
+    },
+    fontFamily: {
+      'sans': ['Karla', 'sans-serif'],
+      'serif': ['Markazi Text', 'serif'],
+    },
     extend: {},
     keyframes: {
       'open-menu': {

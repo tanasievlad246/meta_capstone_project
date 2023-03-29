@@ -1,6 +1,6 @@
 import { Navbar } from "./components/Navbar";
 import "./App.css";
-
+import { HeroSection } from "./components/HeroSection";
 // TODO: Style p, span, h1, h2, h3, h4, h5, h6
 
 function App() {
@@ -8,10 +8,8 @@ function App() {
     <header>
       <Navbar />
     </header>
-    <main>
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <main className="h-screen">
+      <HeroSection />
     </main>
     <footer></footer>
   </> 

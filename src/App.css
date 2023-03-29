@@ -1,3 +1,217 @@
 nav {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
 }
+
+p {
+    font-family: 'Markazi Text', serif;
+    font-size: 18pt;
+    line-height: 1.5;
+}
+
+h1 {
+    font-family: 'Markazi Text', serif;
+    font-size: 64pt;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Markazi Text', serif;
+    font-size: 40pt;
+    font-weight: 600;
+}
+
+h3 {
+    font-family: 'Karla', sans-serif;
+    font-size: 18pt;
+}
+
+h4 {
+    font-family: 'Karla', sans-serif;
+    font-size: 20pt;
+    font-weight: 800;
+}
+
+h5 {
+    font-family: 'Karla', sans-serif;
+    font-size: 16pt;
+    font-weight: 800;
+}
+
+.card-title {
+    font-size: 18pt;
+    font-weight: bold;
+    font-family: 'Karla', sans-serif;
+    line-height: 1.5;
+}
+
+.highlitght-text {
+    font-size: 18pt;
+    font-weight: 500;
+    font-family: 'Karla', sans-serif;
+    line-height: 1.5;
+}
+
+h6 {
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 32pt;
+    }
+
+    h2 {
+        font-size: 20pt;
+        font-weight: 400;
+    }
+    
+    h3 {
+        font-family: 'Karla', sans-serif;
+        font-size: 9pt;
+    }
+    
+    h4 {
+        font-family: 'Karla', sans-serif;
+        font-size: 10pt;
+        font-weight: 800;
+    }
+    
+    h5 {
+        font-family: 'Karla', sans-serif;
+        font-size: 8pt;
+        font-weight: 800;
+    }
+
+    p {
+        font-family: 'Markazi Text', serif;
+        font-size: 12pt;
+        line-height: 1.5;
+    }    
+
+    .card-title {
+        font-size: 16pt;
+    }
+
+    .highlitght-text {
+        font-size: 16pt;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    h1 {
+        font-size: 44pt;
+    }
+
+    h2 {
+        font-size: 32pt;
+    }
+    
+    h3 {
+        font-size: 16pt;
+    }
+    
+    h4 {
+        font-size: 18pt;
+    }
+    
+    h5 {
+        font-size: 16pt;
+    }
+
+    p {
+        font-size: 16pt;
+    }    
+
+    .card-title {
+        font-size: 16pt;
+    }
+
+    .highlitght-text {
+        font-size: 16pt;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    p {
+        font-size: 18pt;
+    }
+    
+    h1 {
+        font-size: 64pt;
+    }
+    
+    h2 {
+        font-size: 40pt;
+    }
+    
+    h3 {
+        font-size: 18pt;
+    }
+    
+    h4 {
+        font-size: 20pt;
+    }
+    
+    h5 {
+        font-size: 16pt;
+    }
+
+    .card-title {
+        font-size: 18pt;
+    }
+
+    .highlitght-text {
+        font-size: 18pt;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 2999px) {
+    p {
+        font-size: 20pt;
+    }
+    
+    h1 {
+        font-size: 82pt;
+    }
+    
+    h2 {
+        font-size: 52pt;
+    }
+    
+    h3 {
+        font-size: 36pt;
+    }
+    
+    h4 {
+        font-size: 28pt;
+    }
+    
+    h5 {
+        font-size: 24pt;
+    }
+
+    .card-title {
+        font-size: 36pt;
+    }
+
+    .highlitght-text {
+        font-size: 36pt;
+    }
+}
+
+@media (min-width: 3000px) {
+    /* Your CSS rules here */
+    p {
+        font-size: 28pt;
+    }
+
+    a {
+        font-size: 20pt;
+    }
+
+    .xxl-btn {
+        font-size: 20pt;
+        height: 80px;
+    }
+  }
