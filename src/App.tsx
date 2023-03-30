@@ -2,6 +2,7 @@ import { Navbar } from "./components/Navbar";
 import "./App.css";
 import { HeroSection } from "./components/HeroSection";
 import { Specials } from "./components/Specials";
+import { Testimonials } from "./components/Testimonials";
 // TODO: Style p, span, h1, h2, h3, h4, h5, h6
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <main className="h-screen w-full">
       <HeroSection />
       <Specials menuItems={specials} />
+      <Testimonials />
     </main>
     <footer></footer>
   </> 

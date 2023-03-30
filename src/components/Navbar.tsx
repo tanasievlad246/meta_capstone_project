@@ -1,6 +1,8 @@
 import littleLemonLogo from "../assets/Logo.svg";
 import hamburgerMenu from "../assets/🦆 icon _hamburger menu_.svg";
 import { useState } from "react";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Navbar = () => {
     const navItems = ["Home", "About", "Menu", "Reservations", "Order Online", "Login"];
@@ -15,7 +17,7 @@ export const Navbar = () => {
             </ul>
             <div className={`absolute origin-top animate-open-menu top-0 right-0 w-full transition-opacity bg-lightgray ${open ? 'block' : 'hidden'}`} style={{ height: '100vh', transition: 'transition: visibility 0s, opacity 0.5s linear'  }}>
                 <div className="flex flex-row justify-end">
-                    <button onClick={() => setOpen(!open)} className="text-center w-16 mt-5 text-2xl">X</button>
+                    <button onClick={() => setOpen(!open)} className="text-center w-16 mt-5 text-2xl"><FontAwesomeIcon icon={faXmark} /></button>
                 </div>
                 <ul className="flex flex-col items-center">
                     {navItems.map((item, index) => <li key={index} className="p-5 text-lg font-extrabold"><a href="/#">{item}</a></li>)}
