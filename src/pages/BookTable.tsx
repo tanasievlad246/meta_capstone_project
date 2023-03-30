@@ -1,7 +1,10 @@
 import { useFormik } from "formik";
+import { useDateInput } from "../hooks";
 import * as Yup from "yup";
+import { useEffect } from "react";
 
 export const BookTable = () => {
+    const [availableTimes, handleTimeChange, initializeTimes] = useDateInput();
     const formik = useFormik({
         initialValues: {
             date: '',
@@ -22,9 +25,14 @@ export const BookTable = () => {
             resetForm();
         },
     });
+    
+    useEffect(() => {
+        initializeTimes();
+    }, []);
 
     return <>
-        <main className="h-[71.3vh] flex items-center">
+        <main className="h-[71.3vh] flex flex-col items-center justify-center">
+            <h2 className="text-green underline">Book Now</h2>
             <div className="flex flex-col w-full items-center">
                 <form onSubmit={formik.handleSubmit}>
                     <div className="mb-4">
@@ -38,7 +46,10 @@ export const BookTable = () => {
                                 formik.touched.date && formik.errors.date ? 'border-red' : 'border-green'
                             }`}
                             value={formik.values.date}
-                            onChange={formik.handleChange}
+                            onChange={e => {
+                                formik.handleChange(e);
+                                handleTimeChange(new Date(e.target.value));
+                            }}
                             onBlur={formik.handleBlur}
                         />
                         {formik.touched.date && formik.errors.date && (<p className="text-red mt-2">{formik.errors.date}</p>)}
@@ -47,16 +58,19 @@ export const BookTable = () => {
                         <label htmlFor="time" className="block text-gray-700 font-medium mb-1">
                             Time
                         </label>
-                        <input
-                            type="time"
+                        <select
                             name="time"
+                            id="res-time"
                             className={`form-input mt-1 block w-full ${
                                 formik.touched.time && formik.errors.time ? 'border-red' : 'border-green'
                             }`}
                             value={formik.values.time}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                        />
+                        >
+                            <option value="">Select a time</option>
+                            {availableTimes.times.map((time) => <option key={time} value={time}>{time}</option>)}
+                        </select>
                         {formik.touched.time && formik.errors.time && (<p className="text-red mt-2">{formik.errors.time}</p>)}
                     </div>
                     <div className="mb-4">
@@ -105,25 +119,3 @@ export const BookTable = () => {
         </main> 
     </>
 }
-
-{/* <form style="display: grid; max-width: 200px; gap: 20px">
-   <label for="res-date">Choose date</label>
-   <input type="date" id="res-date">
-   <label for="res-time">Choose time</label>
-   <select id="res-time ">
-      <option>17:00</option>
-      <option>18:00</option>
-      <option>19:00</option>
-      <option>20:00</option>
-      <option>21:00</option>
-      <option>22:00</option>
-   </select>
-   <label for="guests">Number of guests</label>
-   <input type="number" placeholder="1" min="1" max="10" id="guests">
-   <label for="occasion">Occasion</label>
-   <select id="occasion">
-      <option>Birthday</option>
-      <option>Anniversary</option>
-   </select>
-   <input type="submit" value="Make Your reservation">
-</form> */}
