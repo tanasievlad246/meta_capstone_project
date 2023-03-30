@@ -2,13 +2,23 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    borderColor: {
+      green: '#495E57',
+      yellow: '#F4CE14',
+      salmon: '#EE9972',
+      beige: '#FBDABB',
+      lightgray: '#EDEFEE',
+      black: '#333333',
+      red: '#E74C3C',
+    },
     colors: {
       green: '#495E57',
       yellow: '#F4CE14',
       salmon: '#EE9972',
       beige: '#FBDABB',
       lightgray: '#EDEFEE',
-      black: '#333333'
+      black: '#333333',
+      red: '#E74C3C',
     },
     fontFamily: {
       'sans': ['Karla', 'sans-serif'],
