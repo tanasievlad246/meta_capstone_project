@@ -35,7 +35,6 @@ const useDateInput = (): [State, (date: Date) => void, () => void] => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const updateTimes = () => {
-    // Here you can implement your logic to update the times array based on the selected date
     const times = ["14:00", "15:00", "16:00"];
     dispatch({ type: "UPDATE_TIMES", payload: times });
   };
