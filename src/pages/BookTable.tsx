@@ -1,7 +1,8 @@
 import { useFormik } from "formik";
 import { useDateInput } from "../hooks";
 import * as Yup from "yup";
-import { useEffect } from "react";
+import { useEffect } from "react"; 
+import { submitAPI } from "../utils/api"; // Importing via the CDN did not work
 
 export const BookTable = () => {
     const [availableTimes, handleTimeChange, initializeTimes] = useDateInput();
@@ -21,7 +22,7 @@ export const BookTable = () => {
             occasion: Yup.string().required('Please select an occasion'),
         }),
         onSubmit: (values, { resetForm }) => {
-            console.log(values);
+            submitAPI(values)
             resetForm();
         },
     });
@@ -52,7 +53,7 @@ export const BookTable = () => {
                             }}
                             onBlur={formik.handleBlur}
                         />
-                        {formik.touched.date && formik.errors.date && (<p className="text-red mt-2">{formik.errors.date}</p>)}
+                        {formik.touched.date && formik.errors.date && (<p className="text-red mt-2 text-lg">{formik.errors.date}</p>)}
                     </div>
                     <div className="mb-4">
                         <label htmlFor="time" className="block text-gray-700 font-medium mb-1">
@@ -71,7 +72,7 @@ export const BookTable = () => {
                             <option value="">Select a time</option>
                             {availableTimes.times.map((time) => <option key={time} value={time}>{time}</option>)}
                         </select>
-                        {formik.touched.time && formik.errors.time && (<p className="text-red mt-2">{formik.errors.time}</p>)}
+                        {formik.touched.time && formik.errors.time && (<p className="text-red mt-2 text-lg">{formik.errors.time}</p>)}
                     </div>
                     <div className="mb-4">
                         <label htmlFor="guests" className="block text-gray-700 font-medium mb-1">
@@ -87,7 +88,7 @@ export const BookTable = () => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
-                        {formik.touched.guests && formik.errors.guests && (<p className="text-red mt-2">{formik.errors.guests}</p>)}
+                        {formik.touched.guests && formik.errors.guests && (<p className="text-red mt-2 text-lg">{formik.errors.guests}</p>)}
                     </div>
                     <div className="mb-4">
                         <label htmlFor="occasion" className="block text-gray-700 font-medium mb-1">
@@ -106,7 +107,7 @@ export const BookTable = () => {
                             <option value="birthday">Birthday</option>
                             <option value="anniversary">Anniversary</option>
                         </select>
-                    {formik.touched.occasion && formik.errors.occasion && (<p className="text-red mt-2">{formik.errors.occasion}</p>)}
+                    {formik.touched.occasion && formik.errors.occasion && (<p className="text-red mt-2 text-lg">{formik.errors.occasion}</p>)}
                 </div>
                 <button
                     type="submit"

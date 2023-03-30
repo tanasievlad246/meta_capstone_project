@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { fetchAPI } from "../utils/api";
 
 type State = {
   date: Date | null;
@@ -34,18 +35,20 @@ const reducer = (state: State, action: Action): State => {
 const useDateInput = (): [State, (date: Date) => void, () => void] => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const updateTimes = () => {
-    const times = ["14:00", "15:00", "16:00"];
+  const updateTimes = (date: Date) => {
+    const times = fetchAPI(date);
     dispatch({ type: "UPDATE_TIMES", payload: times });
   };
 
   const handleDateChange = (date: Date) => {
     dispatch({ type: "SET_DATE", payload: date });
-    updateTimes();
+    updateTimes(date);
   };
 
   const initializeTime = () => {
-    dispatch({ type: "UPDATE_TIMES", payload: ["18:00", "19:00", "20:00", "21:00", "22:00"] });
+    const times = fetchAPI(new Date());
+    console.log(times);
+    dispatch({ type: "UPDATE_TIMES", payload: times });
   };
 
   return [state, handleDateChange, initializeTime];
