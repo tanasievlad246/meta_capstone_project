@@ -3,6 +3,7 @@ import "./App.css";
 import { HeroSection } from "./components/HeroSection";
 import { Specials } from "./components/Specials";
 import { Testimonials } from "./components/Testimonials";
+import { About } from "./components/About";
 // TODO: Style p, span, h1, h2, h3, h4, h5, h6
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <HeroSection />
       <Specials menuItems={specials} />
       <Testimonials />
+      <About />
     </main>
     <footer></footer>
   </> 
