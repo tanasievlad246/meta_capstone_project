@@ -17,7 +17,7 @@ export const HeroSection = () => {
             </div>
             <div className='ml-8 lg:ml-28 xl:ml-60'>
                 <button 
-                    className='bg-yellow rounded-xl w-1/2 sm:w-1/2 md:w-1/5 lg:w-2/4 xl:w-2/4 h-12 font-medium xxl-btn'
+                    className='bg-yellow hover:bg-salmon rounded-xl w-1/2 sm:w-1/2 md:w-1/5 lg:w-2/4 xl:w-2/4 h-12 font-medium xxl-btn'
                     onClick={() => navigate('/booktable')}
                 >Reserve a Table</button>
             </div>
