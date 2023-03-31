@@ -64,6 +64,7 @@ export const BookTable = ({ setBooking }: { setBooking: (bookingObject: BookingC
                         <input
                             type="date"
                             name="date"
+                            id="date"
                             className={`form-input mt-1 block w-full${
                                 formik.touched.date && formik.errors.date ? 'border-red' : 'border-green'
                             }`}
@@ -82,7 +83,7 @@ export const BookTable = ({ setBooking }: { setBooking: (bookingObject: BookingC
                         </label>
                         <select
                             name="time"
-                            id="res-time"
+                            id="time"
                             className={`form-input mt-1 block w-full ${
                                 formik.touched.time && formik.errors.time ? 'border-red' : 'border-green'
                             }`}
@@ -102,6 +103,7 @@ export const BookTable = ({ setBooking }: { setBooking: (bookingObject: BookingC
                         <input
                             type="number"
                             name="guests"
+                            id="guests"
                             className={`form-input mt-1 block w-full ${
                                 formik.touched.guests && formik.errors.guests ? 'border-red-500' : 'border-green'
                             }`}
@@ -120,9 +122,10 @@ export const BookTable = ({ setBooking }: { setBooking: (bookingObject: BookingC
                             className={`form-select mt-1 block w-full ${
                                 formik.touched.occasion && formik.errors.occasion ? 'border-red' : 'border-gray-300'
                             }`}
+                            id="occasion"
                             value={formik.values.occasion}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
                         >
                             <option value="">Select an occasion</option>
                             <option value="birthday">Birthday</option>
@@ -132,6 +135,8 @@ export const BookTable = ({ setBooking }: { setBooking: (bookingObject: BookingC
                 </div>
                 <button
                     type="submit"
+                    name="submit reservation"
+                    data-testid="submit-reservation"
                     className="bg-yellow hover:bg-salmon font-medium py-2 px-4 rounded-2xl"
                 >
                     Submit reservation
