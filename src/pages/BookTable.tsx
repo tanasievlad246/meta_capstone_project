@@ -65,6 +65,7 @@ export const BookTable = ({ setBooking }: { setBooking: (bookingObject: BookingC
                             type="date"
                             name="date"
                             id="date"
+                            aria-label="date-select"
                             className={`form-input mt-1 block w-full${
                                 formik.touched.date && formik.errors.date ? 'border-red' : 'border-green'
                             }`}
@@ -84,6 +85,7 @@ export const BookTable = ({ setBooking }: { setBooking: (bookingObject: BookingC
                         <select
                             name="time"
                             id="time"
+                            aria-label="time-select"
                             className={`form-input mt-1 block w-full ${
                                 formik.touched.time && formik.errors.time ? 'border-red' : 'border-green'
                             }`}
@@ -104,6 +106,7 @@ export const BookTable = ({ setBooking }: { setBooking: (bookingObject: BookingC
                             type="number"
                             name="guests"
                             id="guests"
+                            aria-label="guests-number"
                             className={`form-input mt-1 block w-full ${
                                 formik.touched.guests && formik.errors.guests ? 'border-red-500' : 'border-green'
                             }`}
@@ -119,6 +122,7 @@ export const BookTable = ({ setBooking }: { setBooking: (bookingObject: BookingC
                         </label>
                         <select
                             name="occasion"
+                            aria-label="occasion"
                             className={`form-select mt-1 block w-full ${
                                 formik.touched.occasion && formik.errors.occasion ? 'border-red' : 'border-gray-300'
                             }`}
@@ -138,6 +142,7 @@ export const BookTable = ({ setBooking }: { setBooking: (bookingObject: BookingC
                     name="submit reservation"
                     data-testid="submit-reservation"
                     className="bg-yellow hover:bg-salmon font-medium py-2 px-4 rounded-2xl"
+                    aria-label="submit-reservation"
                 >
                     Submit reservation
                 </button>
