@@ -47,7 +47,6 @@ const useDateInput = (): [State, (date: Date) => void, () => void] => {
 
   const initializeTime = () => {
     const times = fetchAPI(new Date());
-    console.log(times);
     dispatch({ type: "UPDATE_TIMES", payload: times });
   };
 

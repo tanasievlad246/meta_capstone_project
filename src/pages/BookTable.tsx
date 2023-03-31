@@ -3,9 +3,19 @@ import { useDateInput } from "../hooks";
 import * as Yup from "yup";
 import { useEffect } from "react"; 
 import { submitAPI } from "../utils/api"; // Importing via the CDN did not work
+import { BookingConfirmationProps } from "./ConfirmedBooking";
+import { useNavigate } from "react-router-dom";
 
-export const BookTable = () => {
+interface BookTableFormValues {
+    date: string;
+    time: string;
+    guests: string;
+    occasion: string;
+}
+
+export const BookTable = ({ setBooking }: { setBooking: (bookingObject: BookingConfirmationProps) => void }) => {
     const [availableTimes, handleTimeChange, initializeTimes] = useDateInput();
+    const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
             date: '',
@@ -22,10 +32,21 @@ export const BookTable = () => {
             occasion: Yup.string().required('Please select an occasion'),
         }),
         onSubmit: (values, { resetForm }) => {
-            submitAPI(values)
+            submitForm(values);
             resetForm();
         },
     });
+
+    const submitForm = async (formValues: BookTableFormValues) => {
+       if (submitAPI(formValues)) {
+           const bookingObject: BookingConfirmationProps = {
+               ...formValues,
+               booked: true,
+           }
+           setBooking(bookingObject);
+           navigate('/bookingconfirmation');
+       }
+    }
     
     useEffect(() => {
         initializeTimes();
